@@ -286,7 +286,15 @@ body {
   align-items: stretch;
   margin-top: 8px;
 }
-.versus-card { padding: 40px 36px; }
+.versus-card { padding: 48px 40px; display: flex; align-items: center; }
+.versus-card p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
 .versus-card .tag {
   font-family: var(--font-body);
   font-weight: 600;
@@ -319,10 +327,7 @@ body {
   border: 1.5px solid var(--border-strong);
   border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
-.versus-pga .tag { color: var(--fg3); }
-.versus-pga h3 { color: var(--pga-deep-blue); }
-.versus-pga .dur { background: var(--pga-ink-100); color: var(--pga-deep-blue); }
-.versus-pga p { color: var(--fg2); }
+.versus-pga p { color: var(--pga-deep-blue); }
 
 .versus-mid {
   display: flex;
@@ -341,10 +346,7 @@ body {
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   box-shadow: var(--shadow-hard);
 }
-.versus-liftoff .tag { color: var(--pga-neon-yellow); }
-.versus-liftoff h3 { color: var(--pga-white); }
-.versus-liftoff .dur { background: var(--pga-orange); color: var(--pga-white); }
-.versus-liftoff p { color: var(--pga-ink-300); }
+.versus-liftoff p { color: var(--pga-white); }
 
 .walkthrough {
   text-align: center;
@@ -531,11 +533,8 @@ body {
 .final-cta .reassure { margin-top: 22px; font-size: 14px; color: var(--fg3); }
 
 /* ---------------- Footer ---------------- */
-.footer { background: var(--pga-deep-blue); color: var(--pga-white); padding: 72px 24px 40px; }
-.footer-main { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--border-invert); align-items: start; }
-.footer-brand p { font-size: 14px; line-height: var(--lh-long); color: var(--pga-ink-300); margin: 18px 0 0; max-width: 42ch; }
-.footer-cta { text-align: right; }
-.footer-fine { max-width: 1160px; margin: 0 auto; padding-top: 22px; display: flex; justify-content: space-between; font-size: 12px; color: var(--pga-ink-300); gap: 16px; flex-wrap: wrap; }
+.footer { background: var(--pga-deep-blue); color: var(--pga-white); padding: 56px 24px; }
+.footer-min { max-width: 1160px; margin: 0 auto; display: flex; justify-content: center; }
 
 /* ---------------- Scroll reveal ---------------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
