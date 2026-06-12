@@ -124,9 +124,13 @@ body {
 /* ---------------- Hero ---------------- */
 .hero {
   text-align: center;
-  padding: 88px 24px 72px;
+  padding: 56px 24px 64px;
   max-width: 1160px;
   margin: 0 auto;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-eyebrow {
   display: inline-block;
@@ -139,40 +143,34 @@ body {
   padding: 8px 18px;
   border: 1px solid var(--pga-orange-300);
   border-radius: var(--radius-pill);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+  align-self: center;
 }
 .hero-title {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(48px, 8vw, 116px);
+  font-size: clamp(48px, 7.4vw, 108px);
   line-height: 0.95;
   letter-spacing: -0.025em;
   color: var(--pga-deep-blue);
   margin: 0 auto;
-  max-width: 16ch;
+  max-width: 15ch;
   text-wrap: balance;
 }
-.hero-sub {
-  font-size: 21px;
-  line-height: var(--lh-long);
-  color: var(--fg2);
-  max-width: 680px;
-  margin: 30px auto 0;
-}
 .hero-ctas {
-  margin-top: 40px;
+  margin-top: 36px;
   display: flex;
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
 .hero-proof {
-  margin: 72px auto 0;
+  margin: 52px auto 0;
   display: flex;
   justify-content: center;
   gap: 72px;
   flex-wrap: wrap;
-  padding-top: 40px;
+  padding-top: 36px;
   border-top: 1px solid var(--border);
 }
 .hero-proof > div { display: flex; flex-direction: column; align-items: center; gap: 6px; }
