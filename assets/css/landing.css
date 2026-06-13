@@ -132,6 +132,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.hero-mark { display: block; width: 74px; height: auto; margin: 0 auto 26px; }
 .hero-eyebrow {
   display: inline-block;
   font-family: var(--font-body);
@@ -546,7 +547,8 @@ body {
 
 /* ---------------- Footer ---------------- */
 .footer { background: var(--pga-deep-blue); color: var(--pga-white); padding: 56px 24px; }
-.footer-min { max-width: 1160px; margin: 0 auto; display: flex; justify-content: center; }
+.footer-min { max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.footer-mark { width: 52px; height: auto; }
 
 /* ---------------- Scroll reveal ---------------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
