@@ -45,5 +45,7 @@ assets/fonts/                  # Big Shoulders (9 weights, self-hosted)
 - **Icons** — [Lucide](https://lucide.dev) via CDN, the icon system specified by the PGA brand
   guide. The copy's section emoji (💬 🚀 🎥 …) are rendered as matching Lucide glyphs to honor
   the brand rule of *no emoji in marketing surfaces* while keeping all wording verbatim.
-- **`image_(4).png`** referenced in the copy (the PGA-vs-Liftoff graphic) was not supplied, so
-  that comparison is rendered natively in brand style. Drop the real asset in if you'd prefer it.
+- **PGA-vs-Liftoff comparison** — the `image_(4).png` referenced in the copy is rendered natively
+  as an "Access by Level" grid (C&C / PGA / Liftoff / Continuity / PGA Offboarded), styled in brand
+  colors with the Liftoff column emphasized. Edit the access matrix directly in the table markup in
+  `index.html`.

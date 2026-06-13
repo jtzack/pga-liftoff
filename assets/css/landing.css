@@ -279,74 +279,86 @@ body {
 }
 
 /* ---------------- PGA vs Liftoff ---------------- */
-.versus {
+.versus-lead {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0;
-  align-items: stretch;
-  margin-top: 8px;
+  gap: 8px;
 }
-.versus-card { padding: 48px 40px; display: flex; align-items: center; }
-.versus-card p {
+.versus-lead p {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(22px, 2.6vw, 32px);
-  line-height: 1.08;
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.1;
   letter-spacing: -0.01em;
+  color: var(--pga-deep-blue);
 }
-.versus-card .tag {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.versus-card h3 {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 38px;
-  line-height: 1;
-  margin: 0 0 18px;
-}
-.versus-card .dur {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 22px;
-  line-height: 1;
-  padding: 10px 18px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 18px;
-}
-.versus-card p { margin: 0; font-size: 17px; line-height: var(--lh-long); }
 
-.versus-pga {
+/* ---- Comparison grid ---- */
+.grid-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-lg); }
+.compare {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--pga-white);
-  border: 1.5px solid var(--border-strong);
-  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  font-family: var(--font-body);
 }
-.versus-pga p { color: var(--pga-deep-blue); }
-
-.versus-mid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.compare th, .compare td {
+  padding: 16px 18px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+/* header row */
+.compare thead th {
   background: var(--pga-deep-blue);
-  color: var(--pga-neon-yellow);
+  color: var(--pga-white);
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: 24px;
-  padding: 0 22px;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  border-bottom: 0;
+  white-space: nowrap;
+}
+.compare thead th.th-el { text-align: left; }
+.compare thead th.th-liftoff { background: var(--pga-orange); color: var(--pga-white); }
+
+/* row label (first column) */
+.compare tbody th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--pga-deep-blue);
+  background: var(--pga-white);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid var(--border);
+  min-width: 220px;
+}
+.compare tbody tr:nth-child(even) th,
+.compare tbody tr:nth-child(even) td { background: var(--bg-alt); }
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td { border-bottom: 0; }
+
+/* yes / no cells */
+.compare .yes svg { width: 22px; height: 22px; stroke-width: 3; }
+.compare td.yes { color: var(--pga-deep-blue); }
+.compare td.no::before {
+  content: "";
+  display: inline-block;
+  width: 16px; height: 2px;
+  background: var(--border-strong);
+  vertical-align: middle;
 }
 
-.versus-liftoff {
-  background: var(--pga-deep-blue);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  box-shadow: var(--shadow-hard);
-}
-.versus-liftoff p { color: var(--pga-white); }
+/* Liftoff column emphasis — the selling point */
+.compare .col-liftoff { background: var(--pga-orange-100) !important; }
+.compare td.col-liftoff.yes { color: var(--pga-orange); }
+.compare tbody tr:nth-child(even) td.col-liftoff { background: #f3ccb2 !important; }
 
 .walkthrough {
   text-align: center;
@@ -556,8 +568,5 @@ body {
   .feature-grid { grid-template-columns: 1fr; }
   .suite-grid { grid-template-columns: 1fr; }
   .hero-proof { gap: 40px; }
-  .versus { grid-template-columns: 1fr; }
-  .versus-pga { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-  .versus-liftoff { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
-  .versus-mid { padding: 14px; }
+  .compare th, .compare td { padding: 13px 14px; }
 }
