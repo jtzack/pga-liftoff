@@ -123,15 +123,33 @@ body {
 
 /* ---------------- Hero ---------------- */
 .hero {
+  position: relative;
+  overflow: hidden;
   text-align: center;
   padding: 56px 24px 64px;
-  max-width: 1160px;
-  margin: 0 auto;
   min-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
+/* Background video + readability scrim (sit behind hero content) */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(255, 250, 250, 0.80);
+}
+.hero-mark, .hero-eyebrow, .hero-title, .hero-ctas { position: relative; z-index: 1; }
 .hero-mark { display: block; width: 74px; height: auto; margin: 0 auto 26px; }
 .hero-eyebrow {
   display: inline-block;
