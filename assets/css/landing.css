@@ -55,15 +55,15 @@ body {
 /* ---------------- Sticky CTA bar ---------------- */
 .cta-bar {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 100;
   background: var(--pga-deep-blue);
   color: var(--pga-white);
-  border-bottom: 1px solid var(--border-invert);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-100%);
+  border-top: 1px solid var(--border-invert);
+  box-shadow: 0 -4px 16px rgba(16, 32, 51, 0.18);
+  transform: translateY(100%);
   transition: transform var(--dur) var(--ease-out);
 }
 .cta-bar.show { transform: translateY(0); }
