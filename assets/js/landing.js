@@ -7,7 +7,7 @@
    Replace the placeholder below with the live Liftoff SamCart link.
    Every "Join Liftoff" / "Join Now" button on the page points here.
    ------------------------------------------------------------------- */
-var SAMCART_URL = "https://vine-perch-730.notion.site/pga-liftoff-coming-soon";
+var SAMCART_URL = "https://ship.samcart.com/products/pga-liftoff-6-month-pif";
 
 (function () {
   "use strict";
@@ -20,6 +20,28 @@ var SAMCART_URL = "https://vine-perch-730.notion.site/pga-liftoff-coming-soon";
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
   });
+
+  // Sticky CTA bar: slide in as soon as the 2nd section ("More Niches…")
+  // enters the viewport, and keep it pinned for the rest of the page.
+  var ctaBar = document.getElementById("ctaBar");
+  var ctaTrigger = document.getElementById("approach");
+  if (ctaBar && ctaTrigger) {
+    if ("IntersectionObserver" in window) {
+      var barObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          // Show once the section has entered the viewport, and stay shown for
+          // everything below it (boundingClientRect.top <= 0).
+          var show = entry.isIntersecting || entry.boundingClientRect.top <= 0;
+          ctaBar.classList.toggle("show", show);
+          ctaBar.setAttribute("aria-hidden", show ? "false" : "true");
+        });
+      }, { threshold: 0 });
+      barObserver.observe(ctaTrigger);
+    } else {
+      ctaBar.classList.add("show");
+      ctaBar.setAttribute("aria-hidden", "false");
+    }
+  }
 
   // Render Lucide icons.
   if (window.lucide && typeof window.lucide.createIcons === "function") {
