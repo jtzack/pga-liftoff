@@ -7,7 +7,7 @@
    Replace the placeholder below with the live Liftoff SamCart link.
    Every "Join Liftoff" / "Join Now" button on the page points here.
    ------------------------------------------------------------------- */
-var SAMCART_URL = "https://vine-perch-730.notion.site/pga-liftoff-coming-soon";
+var SAMCART_URL = "https://ship.samcart.com/products/pga-liftoff-6-month-pif";
 
 (function () {
   "use strict";
