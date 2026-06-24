@@ -601,11 +601,6 @@ body {
 }
 .suite-card p { font-size: 14.5px; line-height: var(--lh-body); color: var(--fg2); margin: 0; font-style: italic; }
 
-/* ---------------- Footer (with final CTA) ---------------- */
-.footer { background: var(--pga-deep-blue); color: var(--pga-white); padding: 40px 24px; text-align: center; }
-.footer-min { max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.footer-mark { width: 52px; height: auto; }
-
 /* ---------------- Scroll reveal ---------------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
 .reveal.in { opacity: 1; transform: none; }
@@ -623,7 +618,6 @@ body {
 @media (max-width: 760px) {
   .nav-links { display: none; }
   .section { padding: 32px 0; }
-  .footer { padding: 32px 24px; }
   .feature-grid { grid-template-columns: 1fr; }
   .suite-grid { grid-template-columns: 1fr; }
   .hero-proof { gap: 40px; }
