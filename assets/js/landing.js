@@ -21,17 +21,20 @@ var SAMCART_URL = "https://vine-perch-730.notion.site/pga-liftoff-coming-soon";
     el.setAttribute("rel", "noopener");
   });
 
-  // Sticky CTA bar: slide in once the 2nd section has scrolled out of view,
-  // and keep it pinned for the rest of the page.
+  // Sticky CTA bar: slide in as the user begins scrolling from section 2
+  // into section 3 (i.e. once section 3 appears at the bottom of the
+  // viewport), and keep it pinned for the rest of the page.
   var ctaBar = document.getElementById("ctaBar");
-  var ctaTrigger = document.getElementById("approach");
+  var ctaTrigger = document.getElementById("compare");
   if (ctaBar && ctaTrigger) {
     if ("IntersectionObserver" in window) {
       var barObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          var past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-          ctaBar.classList.toggle("show", past);
-          ctaBar.setAttribute("aria-hidden", past ? "false" : "true");
+          // Show once section 3 has entered the viewport, and stay shown for
+          // everything below it (boundingClientRect.top <= 0).
+          var show = entry.isIntersecting || entry.boundingClientRect.top <= 0;
+          ctaBar.classList.toggle("show", show);
+          ctaBar.setAttribute("aria-hidden", show ? "false" : "true");
         });
       }, { threshold: 0 });
       barObserver.observe(ctaTrigger);
