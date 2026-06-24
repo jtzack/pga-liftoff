@@ -397,7 +397,10 @@ body {
 }
 
 /* ---------------- Included features ---------------- */
-.included { background: var(--bg-alt); }
+/* "Let's walk through…" is a lead-in to these cards — collapse the seam
+   between the comparison section and this one so they read as one block. */
+#compare { padding-bottom: 0; }
+.included { background: var(--bg-alt); padding-top: 36px; }
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
