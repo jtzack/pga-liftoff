@@ -52,6 +52,49 @@ body {
 }
 .btn-ghost:hover { color: var(--accent); }
 
+/* ---------------- Sticky CTA bar ---------------- */
+.cta-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--pga-deep-blue);
+  color: var(--pga-white);
+  border-bottom: 1px solid var(--border-invert);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-100%);
+  transition: transform var(--dur) var(--ease-out);
+}
+.cta-bar.show { transform: translateY(0); }
+.cta-bar-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.cta-bar-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.cta-bar-mark { width: 26px; height: auto; flex: none; }
+.cta-bar-btn { flex: none; }
+
+@media (max-width: 600px) {
+  .cta-bar-inner { padding: 8px 16px; gap: 10px; }
+  .cta-bar-text { font-size: 14px; gap: 8px; }
+  .cta-bar-mark { display: none; }
+}
+
 /* ---------------- Nav ---------------- */
 .nav {
   position: sticky;
@@ -561,7 +604,6 @@ body {
 /* ---------------- Footer (with final CTA) ---------------- */
 .footer { background: var(--pga-deep-blue); color: var(--pga-white); padding: 40px 24px; text-align: center; }
 .footer-min { max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.footer-min .btn { margin-bottom: 24px; }
 .footer-mark { width: 52px; height: auto; }
 
 /* ---------------- Scroll reveal ---------------- */

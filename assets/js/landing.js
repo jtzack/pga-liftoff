@@ -21,6 +21,26 @@ var SAMCART_URL = "https://vine-perch-730.notion.site/pga-liftoff-coming-soon";
     el.setAttribute("rel", "noopener");
   });
 
+  // Sticky CTA bar: slide in once the 2nd section has scrolled out of view,
+  // and keep it pinned for the rest of the page.
+  var ctaBar = document.getElementById("ctaBar");
+  var ctaTrigger = document.getElementById("approach");
+  if (ctaBar && ctaTrigger) {
+    if ("IntersectionObserver" in window) {
+      var barObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+          ctaBar.classList.toggle("show", past);
+          ctaBar.setAttribute("aria-hidden", past ? "false" : "true");
+        });
+      }, { threshold: 0 });
+      barObserver.observe(ctaTrigger);
+    } else {
+      ctaBar.classList.add("show");
+      ctaBar.setAttribute("aria-hidden", "false");
+    }
+  }
+
   // Render Lucide icons.
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
